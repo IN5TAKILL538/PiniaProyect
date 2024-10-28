@@ -1,39 +1,62 @@
-
-  <script>
-import { ref } from "vue"; 
-
+<script setup>
+import { ref } from "vue";
 import jsonDatos from "../store/user.json";
 
 console.log(jsonDatos);
 
 let columns = ref([
   {
-    name: "Actividad",
+    name: "nombre",
     align: "center",
-    label: "Actividad",
+    label: "Nombre",
     field: "name",
     sortable: true,
   },
   {
-    name: "Fecha",
+    name: "correo",
     align: "center",
-    label: "Fecha",
+    label: "Correo",
     field: "email",
     sortable: true,
   },
   {
-    name: "Estado",
+    name: "clave",
     align: "center",
-    label: "Estado",
+    label: "Contraseña",
     field: "password",
     sortable: true,
   },
-  
+  {
+    name: "fecha",
+    align: "center",
+    label: "Fecha creacion",
+    field: "creationAt",
+    sortable: true,
+  },
+  {
+    name: "avatar",
+    align: "center",
+    label: "Avatar",
+    field: "avatar",
+    sortable: true,
+  },
+  {
+    name: "status",
+    align: "center",
+    label: "Estado",
+    field: "status",
+    sortable: true,
+  },
+  {
+    name: "opciones",
+    align: "center",
+    label: "Opciones",
+    sortable: true,
+  },
 ]);
-
 </script>
 
-  <template>
+<template>
   <div>
     <q-table
       title="Datos usuarios"
@@ -43,31 +66,25 @@ let columns = ref([
     >
       <template v-slot:body-cell-avatar="props">
         <q-td :props="props" class="q-pa-sm">
-          <img
-            :src="props.row.avatar"
-            alt=""
-            style="height: 50px; width: 50px"
-          />
+          <img :src="props.row.avatar" alt="" style="height: 50px; width: 50px;">
         </q-td>
       </template>
       <template v-slot:body-cell-fecha="props">
         <q-td :props="props" class="q-pa-sm">
-          {{ props.row.creationAt.toString().split("T")[0] }}
+          {{ props.row.creationAt.toString().split('T')[0] }}
         </q-td>
       </template>
       <template v-slot:body-cell-status="props">
         <q-td :props="props" class="q-pa-sm">
-          <span style="background-color: green" v-if="props.row.status == 1"
-            >Activo</span
-          >
-          <span style="background-color: red" v-else>Inactivo</span>
+          <span style="background-color: green;" v-if="props.row.status==1">Activo</span>
+          <span style="background-color: red;" v-else>Inactivo</span>
         </q-td>
       </template>
       <template v-slot:body-cell-opciones="props">
         <q-td :props="props" class="q-pa-sm">
-          <button>📝</button>
-          <button v-if="props.row.status == 1">❌</button>
-          <button v-else>✅</button>
+         <button>📝</button>
+         <button v-if="props.row.status==1">❌</button>
+         <button v-else>✅</button>
         </q-td>
       </template>
     </q-table>

@@ -20,6 +20,6 @@ export const useAdminStore = defineStore("admin",()=>{
     }
     
     return{
-        inicio, loading
+        inicio, loading, 
     }
 })
