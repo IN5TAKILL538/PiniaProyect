@@ -1,92 +1,87 @@
+<template>
+  <header>
+      <h1>Aqui estan tus actividades</h1>
+      <div class="option">
+          <p>tambien puedes agregar una nueva aqui</p>
+          <q-btn to="/agregar">agregar</q-btn>
+      </div>
+  </header>
+
+  <main>
+      <q-table id="actividades" title="Actividades" :rows="activities" :columns="columns" row-key="description">
+          <template v-slot:body-cell-description="props">
+              <q-td :props="props" class="q-pa-sm">
+                  {{ props.row.description }}
+              </q-td>
+          </template>
+          <template v-slot:body-cell-date="props"> 
+              <q-td :props="props" class="q-pa-sm">
+                  {{ props.row.date }}
+              </q-td>
+          </template>
+          <template v-slot:body-cell-state="props">
+              <q-td id="state" 
+              :props="props" class="q-pa-sm" 
+              v-if="props.row.state === 'pendiente' ? colorCell = 'red': colorCell = 'green'"
+              :style="{backgroundColor:colorCell}">
+                  <p>{{ props.row.state }}</p>
+                  <q-btn  icon="check" id="btnComplete" @click="changeState(props.row)"></q-btn>
+              </q-td>
+          </template>
+          <template v-slot:body-cell-edit="props">
+              <q-td id="optionBtn" :props="props" class="q-pa-sm">
+                  <q-btn to="/editar" style="width: 40px   !important" @click="mainStore.selectActivity(props.row)">✍🏻</q-btn>
+                  <q-btn @click="mainStore.deleteActivity(props.row)" style="width: 40px !important">🗑</q-btn>
+              </q-td>
+          </template>
+      </q-table>
+  </main>
+</template>
+
+<style src="../styles/actividades.css" scoped></style>
 <script setup>
-import { ref } from "vue";
-import jsonDatos from "../store/user.json";
+import { useMainStore } from '../store/store.js'
+import { ref } from 'vue'
+const mainStore = useMainStore()
+const changeState = mainStore.changeState
+const colorCell = ref("null")
 
-console.log(jsonDatos);
 
+//formulario}
+const activities = ref(mainStore.activities)
 let columns = ref([
   {
-    name: "nombre",
-    align: "center",
-    label: "Nombre",
-    field: "name",
-    sortable: true,
+      name: "description",
+      align: "center",
+      label: "Actividad",
+      field: "description",
+      sortable: true,
   },
   {
-    name: "correo",
-    align: "center",
-    label: "Correo",
-    field: "email",
-    sortable: true,
+      name: "date",
+      align: "center",
+      label: "Fecha",
+      field: "date",
+      sortable: true,
   },
   {
-    name: "clave",
-    align: "center",
-    label: "Contraseña",
-    field: "password",
-    sortable: true,
+      name: "state",
+      align: "center",
+      label: "estado",
+      field: "state",
+      sortable: true,
   },
   {
-    name: "fecha",
-    align: "center",
-    label: "Fecha creacion",
-    field: "creationAt",
-    sortable: true,
-  },
-  {
-    name: "avatar",
-    align: "center",
-    label: "Avatar",
-    field: "avatar",
-    sortable: true,
-  },
-  {
-    name: "status",
-    align: "center",
-    label: "Estado",
-    field: "status",
-    sortable: true,
-  },
-  {
-    name: "opciones",
-    align: "center",
-    label: "Opciones",
-    sortable: true,
-  },
+      name: "edit",
+      align: "center",
+      label: "Editar",
+      field: "edit",
+      sortable: true,
+  }
 ]);
-</script>
 
-<template>
-  <div>
-    <q-table
-      title="Datos usuarios"
-      :rows="jsonDatos"
-      :columns="columns"
-      row-key="name"
-    >
-      <template v-slot:body-cell-avatar="props">
-        <q-td :props="props" class="q-pa-sm">
-          <img :src="props.row.avatar" alt="" style="height: 50px; width: 50px;">
-        </q-td>
-      </template>
-      <template v-slot:body-cell-fecha="props">
-        <q-td :props="props" class="q-pa-sm">
-          {{ props.row.creationAt.toString().split('T')[0] }}
-        </q-td>
-      </template>
-      <template v-slot:body-cell-status="props">
-        <q-td :props="props" class="q-pa-sm">
-          <span style="background-color: green;" v-if="props.row.status==1">Activo</span>
-          <span style="background-color: red;" v-else>Inactivo</span>
-        </q-td>
-      </template>
-      <template v-slot:body-cell-opciones="props">
-        <q-td :props="props" class="q-pa-sm">
-         <button>📝</button>
-         <button v-if="props.row.status==1">❌</button>
-         <button v-else>✅</button>
-        </q-td>
-      </template>
-    </q-table>
-  </div>
-</template>
+function btnComplete() {
+  colorCell.value = "green"
+  textComplete.value = "completada"
+}
+</script>
