@@ -95,3 +95,29 @@ p{
     justify-content: center;
 
 }
+@media (max-width: 800px) {
+    #actividades{
+        display: flex;
+        width: 600px;
+        min-height: 350px;
+        background-color: rgba(15, 222, 236, 0.8);
+        border-radius: 50px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        
+    }
+}
+@media (max-width: 600px) {
+    #actividades{
+        display: flex;
+        width: 100%;
+        min-height: 350px;
+        background-color: rgba(15, 222, 236, 0.8);
+        border-radius: 50px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        
+    }
+}
