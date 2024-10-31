@@ -22,14 +22,19 @@ main{
 
 .optionEditar{
     display: flex;
-    align-items: center ;
+    align-items: center;
     gap: 10px;
-    padding: 10px;
     justify-content: center;
-    width: fit-content;
-    border-radius: 7px ;
-    background-color: white;
-    color: black;
+    background-color: rgba(38, 35, 54, 0.5);
+    border-radius: 10px;
+    padding: 0%;
+    
+    display: flex;
+
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
 }
 
 p{
@@ -46,7 +51,7 @@ p{
 }
 
 .optionEditar:hover{
-    background-color: #ffafcc;
+    background-color: #1a6685;
     color: white;
     border: 1px solid white;
 
@@ -73,7 +78,7 @@ h1{
 
 
 .q-form{
-    background-color: #ffafcc;
+    background-color: rgba(15, 222, 236, 0.8);
     padding: 10px;
     border-radius: 7px;
     width: 80%;

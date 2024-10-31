@@ -11,9 +11,11 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     gap: 20px;
     padding: 20px;
     width: 100%;
+    
 }
 
 .option{
@@ -21,6 +23,19 @@ main{
     align-items: center;
     gap: 10px;
     justify-content: center;
+    background-color: rgba(207, 204, 178, 0.5);
+    border-radius: 10px;
+    padding: 0%;
+    
+    display: flex;
+
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+.bntagg{
+    border-radius: 10px;
 }
 
 p{
@@ -30,6 +45,7 @@ p{
 #actividades{
     width: 70%;
     min-height: 350px;
+    background-color: rgba(15, 222, 236, 0.8);;
 }
 
 #optionBtn{
@@ -57,4 +73,9 @@ p{
 
 .btn-completed {
     background-color: green;
+}
+.q-pa-sm{
+    background-color: rgba(38, 35, 54, 0.5);
+    border-radius: 10px;
+    border: 1px;
 }

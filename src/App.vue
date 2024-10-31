@@ -1,17 +1,10 @@
 <template>
-  <q-layout view="lHr Lpr lfr">
+  <q-layout view="lHc Lpc lfc">
 
-    <q-header elevated class="bg-primary text-white" height-hint="98">
-      <q-toolbar>
-        <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
-          </q-avatar>
-          Title
-        </q-toolbar-title>
-      </q-toolbar>
+    <q-header elevated class="bg-primary text-black" height-hint="70">
+    
 
-      <q-tabs align="left">
+      <q-tabs  >
         <q-route-tab to="/" label="Actividades" />
         <q-route-tab to="/agregar" label="Agregar" />
         <q-route-tab to="/editar" label="Editar" />
@@ -26,3 +19,13 @@
 
   </q-layout>
 </template>
+<style>
+.bg-primary{
+  display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+    color: black;
+    background-color: blue;
+}
+</style>

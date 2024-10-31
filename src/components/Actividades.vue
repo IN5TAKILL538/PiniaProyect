@@ -1,10 +1,8 @@
 <template>
   <header>
-      <h1>Aqui estan tus actividades</h1>
-      <div class="option">
-          <p>tambien puedes agregar una nueva aqui</p>
-          <q-btn to="/agregar">agregar</q-btn>
-      </div>
+    
+      <h1>Tus Actividades</h1>
+
   </header>
 
   <main>
@@ -35,6 +33,10 @@
               </q-td>
           </template>
       </q-table>
+      <div class="option">
+          <p>Nueva tarea</p>
+          <q-btn to="/agregar" class="btnagg">agregar</q-btn>
+      </div>
   </main>
 </template>
 

@@ -8,9 +8,12 @@
 
 
 .q-form{
-    background-color: #ffafcc;
+    background-color: rgba(15, 222, 236, 0.8);
     padding: 10px;
     border-radius: 7px;
     width: 80%;
     margin: 0%;
+}
+.q-gutter-md{
+    color: black;
 }

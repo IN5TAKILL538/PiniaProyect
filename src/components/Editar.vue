@@ -1,17 +1,17 @@
 <template>
     <header>
-       <h1>Aqui puedes editar una actividad 😁</h1>
+       <h1>Editando ✍🏻</h1>
     </header>
     <main>
        <div class="q-pa-md">
    
    <q-form @submit="mainStore.editActivity(descriptionActivity, date)" class="q-gutter-md">
-     <q-input type="textarea" filled v-model="descriptionActivity" label="descripcion de la actividad" lazy-rules />
+     <q-input type="textarea" filled v-model="descriptionActivity" label="Descripcion" lazy-rules />
    
-     <q-input filled type="date" v-model="date" label="Your age *" lazy-rules />
+     <q-input filled type="date" v-model="date" label="Fecha de la actividad" lazy-rules />
    
      <div class="q-gutter-md">
-     <p>aqui abajo puedes cambiar el estado de la actividad si lo deseas</p>
+     <p>Estado</p>
        <q-radio v-model="selectedActivity.state" val="pendiente" label="pendiente" />
        <q-radio v-model="selectedActivity.state" val="completada" label="completada" />
      </div>

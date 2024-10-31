@@ -1,10 +1,7 @@
 <template>
     <header>
-      <h1>Aqui puedes agregar una nueva actividad 😁</h1>
-      <div class="optionEditar">
-        <p>si deseas editar una actividad haz click en el boton</p>
-        <q-btn to="/editar">Editar</q-btn>
-      </div>
+      <h1>Agregando tareas 🗒️</h1>
+      
     </header>
   
     <main>
@@ -12,11 +9,11 @@
   
         <q-form @submit="addActivity(descriptionActivity, date)"
          class="q-gutter-md">
-          <q-input type="textarea" filled v-model="descriptionActivity" label="descripcion de la actividad " lazy-rules />
+          <q-input type="textarea" filled v-model="descriptionActivity" label="Descripcion" lazy-rules />
   
-          <q-input filled type="date" v-model="date" label="Your age *" lazy-rules />
+          <q-input filled type="date" v-model="date" label="Fecha de la Actividad" lazy-rules />
   
-          <q-toggle v-model="accept" label="I accept the license and terms" />
+          
   
           <div>
             <q-btn label="Submit" type="submit" color="primary"/>
