@@ -51,6 +51,7 @@ p{
     text-align: center;
     align-items: center;
     justify-content: center;
+    
 }
 
 #optionBtn{
@@ -85,4 +86,12 @@ p{
     border: 1px;
     margin: 5px;
     gap: 5px;
+    align-items: center;
+    justify-content: center;
+
+}
+.q-td{
+    align-items: center;
+    justify-content: center;
+
 }
