@@ -7,7 +7,7 @@
     <main>
       <div class="q-pa-md">
   
-        <q-form @submit="addActivity(descriptionActivity, date)"
+        <q-form  @submit="addActivity(descriptionActivity, date) "
          class="q-gutter-md">
           <q-input type="textarea" filled v-model="descriptionActivity" label="Descripcion" lazy-rules />
   

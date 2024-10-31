@@ -6,7 +6,7 @@
   </header>
 
   <main>
-      <q-table id="actividades" title="Actividades" :rows="activities" :columns="columns" row-key="description">
+      <q-table id="actividades" title="Actividades"  :rows="activities" :columns="columns" row-key="description">
           <template v-slot:body-cell-description="props">
               <q-td :props="props" class="q-pa-sm">
                   {{ props.row.description }}

@@ -43,9 +43,14 @@ p{
 }
  
 #actividades{
+    display: flex;
     width: 70%;
     min-height: 350px;
-    background-color: rgba(15, 222, 236, 0.8);;
+    background-color: rgba(15, 222, 236, 0.8);
+    border-radius: 50px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 #optionBtn{
@@ -76,6 +81,8 @@ p{
 }
 .q-pa-sm{
     background-color: rgba(38, 35, 54, 0.5);
-    border-radius: 10px;
+    border-radius: 15px;
     border: 1px;
+    margin: 5px;
+    gap: 5px;
 }
